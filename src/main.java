@@ -5,7 +5,7 @@ public class main
 {
     public static void main(String[] args)
     {
-
+        
     }
 
     public static void login()
@@ -24,8 +24,8 @@ public class main
     public static void ListeMateriel()
     {
         ReadFileClass Read = new ReadFileClass();
-        List<String> Materiel = new ArrayList<String>();
-        Materiel = Read.read("ListeMeteriel.txt");
+        String[] Materiel;
+        Materiel = Read.readCharByChar("ListeMeteriel.txt");
         //affichage page liste matériel
     }
 

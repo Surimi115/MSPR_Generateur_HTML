@@ -6,7 +6,7 @@ public class ReadFileClass
 {
     public static List<String> read(String fileName)
     {
-        String file = "C:\\Users\\guill\\IdeaProjects\\MSPR_Generateur_HTML\\fichiers_data" + fileName;
+        String file = "C:\\Users\\guill\\IdeaProjects\\MSPR_Generateur_HTML\\fichiers_data\\" + fileName;
         List<String> data = new ArrayList<String>();
         try(
                 BufferedReader br = new BufferedReader(new FileReader(file)))
@@ -14,7 +14,7 @@ public class ReadFileClass
             String line;
             while ((line = br.readLine()) != null)
             {
-                System.out.println(line);
+                //System.out.println(line);
                 data.add(line);
             }
         }
@@ -27,18 +27,18 @@ public class ReadFileClass
         return data;
     }
 
-    public static List<String> readMateriel(String fileName)
+    public static String[] readCharByChar(String fileName)
     {
-        String file = "C:\\Users\\guill\\IdeaProjects\\MSPR_Generateur_HTML\\fichiers_data" + fileName;
-        List<String> data = new ArrayList<String>();
+        String file = "C:\\Users\\guill\\IdeaProjects\\MSPR_Generateur_HTML\\fichiers_data\\" + fileName;
+        String[] data;
+        String ligne = "";
         try(
                 BufferedReader br = new BufferedReader(new FileReader(file)))
         {
-            String line;
-            while ((line = br.readLine()) != null)
+            int c;
+            while ((c = br.read()) != -1)
             {
-                System.out.println(line);
-                data.add(line);
+                ligne += (char)c;
             }
         }
         catch(
@@ -47,6 +47,7 @@ public class ReadFileClass
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
+        data = ligne.split("    ");
         return data;
     }
 }
