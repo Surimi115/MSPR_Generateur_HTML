@@ -12,7 +12,7 @@ public class JavaLM {
         String Mat9= "Tasers";
         String Mat10="Bombes lacrymogènes";
 
-        System.out.println("""
+        var content="""
                 <!doctype html>
                 <html lang="en">
                 <head>
@@ -23,7 +23,12 @@ public class JavaLM {
                 <div class="container">
                       <h1>List_Materiel</h1>
                       <ol class="Lmat">Liste ordonnée :
-                              <li class="Lmat-item">mousqueton:"""+ Mat1 + """
+                <div>
+                </body>
+                </html>
+                """;
+       var cont= """    
+                <li class="Lmat-item">mousqueton:"""+ Mat1 + """
                               </li>
                               <li class="Lmat-item">gants:"""+ Mat2 + """
                               </li>
@@ -43,11 +48,8 @@ public class JavaLM {
                               </li>
                               <li class="Lmat-item">lacrymo:"""+ Mat10 + """
                               </li>
-                            </ol> 
-                <div>
-                </body>
-                </html>
-                """);
+                            </ol> """;
+
 
     }
 }
