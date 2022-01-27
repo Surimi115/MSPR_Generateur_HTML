@@ -1,5 +1,9 @@
 test_jenkins
+<<<<<<< HEAD
 Re
 nouveau truc
 tester jenkins serveur
 re
+=======
+Re
+>>>>>>> 555c68f (test jenkins build)
