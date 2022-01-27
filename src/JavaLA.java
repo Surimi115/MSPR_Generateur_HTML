@@ -1,11 +1,10 @@
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+
 public class JavaLA {
     public static void AfficheHT(){
-        String NomID= "jean";
-        String PremonID="patrick";
-        String Poste="Surveillance entrepôt";
-        String MatUT="lampe";
 
-        System.out.println("""
+        var contante="""
                 <!doctype html>
                 <html lang="en">
                 <head>
@@ -15,23 +14,24 @@ public class JavaLA {
                 <body>
                 <div class="container">
                       <h1>ID_agent</h1>
-                      <ol class="Lid">Liste ordonnée :
-                              <li class="Lid-item">Nom"""+ NomID + """
-                              </li>
-                              <li class="Lid-item">Prenom"""+ PremonID + """
-                              </li>
-                              <li class="Lid-item">Poste"""+ Poste + """
-                              </li>
+                      <ol class="Lid">
+                              <li class="Lid-item">Nom:</li>
+                              <li class="Lid-item">Prenom:</li>
+                              <li class="Lid-item">Poste:</li>
                             </ol>
                       <h2>Materiel</h2>
-                      <ol class="Lmateriel">Liste ordonnée :
-                              <li class="Lid-item">Nom"""+ MatUT + """
-                              </li>
+                      <ol class="Lmateriel">
+                              <li class="Lid-item"></li>
                             </ol>
-                <div>
+                </div>
                 </body>
                 </html>
-                """);
+                """;
+        try(var pw = new PrintWriter("Lmat.html")) {
+            pw.write(contante);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
 
     }
 }

@@ -15,9 +15,9 @@ public class Menu {
                 <div class="container">
                       <h1>GO Securi</h1>
                       <ol class="Lagents">Menu
-                              <li class="Lmenu-list"><a href="mat.htlm">Liste du materiel</a></li>
+                              <li class="Lmenu-list"><a href="Lmat.html">Liste du materiel</a></li>
                               <li class="Lmenu-list"><a href="info.html">Mes Info</a></li>
-                              <li class="Lmenu-list"><a href="agent.html">Liste des agents</li>
+                              <li class="Lmenu-list"><a href="agent.html">Liste des agents</a></li>
                             </ol>
                 </div>
                 </body>
