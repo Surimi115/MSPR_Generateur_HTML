@@ -1,3 +1,6 @@
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+
 public class JavaLM {
 
     public static void AfficheHT(){
@@ -12,7 +15,7 @@ public class JavaLM {
         String Mat9= "Tasers";
         String Mat10="Bombes lacrymogènes";
 
-        var content="""
+        var contante="""
                 <!doctype html>
                 <html lang="en">
                 <head>
@@ -22,33 +25,17 @@ public class JavaLM {
                 <body>
                 <div class="container">
                       <h1>List_Materiel</h1>
-                      <ol class="Lmat">Liste ordonnée :
-                <div>
+                      <ol class="Lmat">
+                      </ol>
+                </div>
                 </body>
                 </html>
                 """;
-       var cont= """    
-                <li class="Lmat-item">mousqueton:"""+ Mat1 + """
-                              </li>
-                              <li class="Lmat-item">gants:"""+ Mat2 + """
-                              </li>
-                              <li class="Lmat-item">brassard:"""+ Mat3 + """
-                              </li>
-                              <li class="Lmat-item">menottes:"""+ Mat4 + """
-                              </li>
-                              <li class="Lmat-item">cyno:"""+ Mat5 + """
-                               </li>
-                              <li class="Lmat-item">talky:"""+ Mat6 + """
-                              </li>
-                              <li class="Lmat-item">lampe:"""+ Mat7 + """
-                              </li>
-                              <li class="Lmat-item">kit:"""+ Mat8 + """
-                              </li>
-                              <li class="Lmat-item">taser:"""+ Mat9 + """
-                              </li>
-                              <li class="Lmat-item">lacrymo:"""+ Mat10 + """
-                              </li>
-                            </ol> """;
+        try(var pw = new PrintWriter("Lmat.html")) {
+            pw.write(contante);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
 
 
     }

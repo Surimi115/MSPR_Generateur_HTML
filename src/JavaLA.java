@@ -16,18 +16,12 @@ public class JavaLA {
                       <h1>ID_agent</h1>
                       <ol class="Lid">
                               <li class="Lid-item">Nom:</li>
-                              <li class="Lid-item">Prenom:</li>
-                              <li class="Lid-item">Poste:</li>
-                            </ol>
-                      <h2>Materiel</h2>
-                      <ol class="Lmateriel">
-                              <li class="Lid-item"></li>
                             </ol>
                 </div>
                 </body>
                 </html>
                 """;
-        try(var pw = new PrintWriter("Lmat.html")) {
+        try(var pw = new PrintWriter("agent.html")) {
             pw.write(contante);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
