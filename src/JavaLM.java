@@ -4,17 +4,6 @@ import java.io.PrintWriter;
 public class JavaLM {
 
     public static void AfficheHT(){
-        String Mat1= "Mousqueton";
-        String Mat2= "Gants d’intervention";
-        String Mat3= "Brassard de sécurité";
-        String Mat4= "Porte menottes";
-        String Mat5= "Bandeau agent cynophile";
-        String Mat6= "Talkies walkies";
-        String Mat7= "Lampe Torche";
-        String Mat8= "Kit oreillette";
-        String Mat9= "Tasers";
-        String Mat10="Bombes lacrymogènes";
-
         var contante="""
                 <!doctype html>
                 <html lang="en">
