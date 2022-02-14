@@ -22,7 +22,7 @@ public class main
         for(File fi : files)
         {
             String agent[];
-            Read.readCharByChar(fi.getName());
+            agent = Read.readCharByChar(fi.getName());
             JavaInfo.AfficheHT();
         }
     }
