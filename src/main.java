@@ -23,7 +23,7 @@ public class main
         {
             String agent[];
             agent = Read.readCharByChar(fi.getName());
-            JavaInfo.AfficheHT();
+            JavaInfo.AfficheHT(agent, fi.getName());
         }
     }
 
@@ -32,15 +32,15 @@ public class main
         ReadFileClass Read = new ReadFileClass();
         String[] Materiel;
         Materiel = Read.readCharByChar("liste.txt");
-        JavaLM.AfficheHT();
+        JavaLM.AfficheHT(Materiel);
     }
 
 
     public static void ListeAgents()
     {
         ReadFileClass Read = new ReadFileClass();
-        List<String> Agents = new ArrayList<String>();
-        Agents = Read.read("staff.txt");
-        JavaLA.AfficheHT();
+        String Agents[];
+        Agents = Read.readCharByChar("staff.txt");
+        JavaLA.AfficheHT(Agents);
     }
 }
