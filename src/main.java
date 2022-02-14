@@ -40,7 +40,7 @@ public class main
     {
         ReadFileClass Read = new ReadFileClass();
         List<String> Agents = new ArrayList<String>();
-        Agents = Read.read("staff.txt");
+        Agents = Read.readCharByChar("staff.txt");
         JavaLA.AfficheHT();
     }
 }
