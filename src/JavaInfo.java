@@ -1,8 +1,10 @@
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+
 public class JavaInfo {
     public static void AfficheHT(){
-        String NomAG= "jean";
 
-        System.out.println("""
+        var contante="""
                 <!doctype html>
                 <html lang="en">
                 <head>
@@ -11,15 +13,23 @@ public class JavaInfo {
                 </head>
                 <body>
                 <div class="container">
-                      <h1>List_Agents</h1>
-                      <ol class="Lagents">Liste ordonnée :
-                              <li class="Lagent-item">Nom:"""+ NomAG + """
-                              </li>
+                      <h1>ID_agent</h1>
+                      <ol class="Lid">
+                              <li class="Lid-item">Nom:</li>
+                              <li class="Lid-item">Prenom:</li>
+                              <li class="Lid-item">Poste:</li>
                             </ol>
-                <div>
+                      <img class="fit-picture"
+                           src="">
+                </div>
                 </body>
                 </html>
-                """);
+                """;
+        try(var pw = new PrintWriter("info.html")) {
+            pw.write(contante);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
 
     }
 }
