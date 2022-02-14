@@ -39,7 +39,7 @@ public class main
     public static void ListeAgents()
     {
         ReadFileClass Read = new ReadFileClass();
-        List<String> Agents = new ArrayList<String>();
+        String Agents[];
         Agents = Read.readCharByChar("staff.txt");
         JavaLA.AfficheHT();
     }
