@@ -1,47 +1,46 @@
+import java.nio.file.Files;
+import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
+import java.io.File;
 
 public class main
 {
     public static void main(String[] args)
     {
-        
+        Menu.AfficheHT();
+        GenerateAgents();
+        ListeMateriel();
+        ListeAgents();
     }
 
-    public static void login()
+    public static void GenerateAgents()
     {
-        //page de login
-        //verif de connectio
-    }
-
-    public static int accueil()
-    {
-        int choixUtil = 0;
-        //page accueil
-        return choixUtil;
+        File f = new File("C:\\Users\\guill\\IdeaProjects\\MSPR_Generateur_HTML\\fichiers_data");
+        ArrayList<File> files = new ArrayList<File>(Arrays.asList(f.listFiles()));
+        ReadFileClass Read = new ReadFileClass();
+        for(File fi : files)
+        {
+            String agent[];
+            Read.readCharByChar(fi.getName());
+            JavaInfo.AfficheHT();
+        }
     }
 
     public static void ListeMateriel()
     {
         ReadFileClass Read = new ReadFileClass();
         String[] Materiel;
-        Materiel = Read.readCharByChar("ListeMeteriel.txt");
-        //affichage page liste matériel
+        Materiel = Read.readCharByChar("liste.txt");
+        JavaLM.AfficheHT();
     }
 
-    public static void FicheAgent()
-    {
-        ReadFileClass Read = new ReadFileClass();
-        List<String> InfosAgent = new ArrayList<String>();
-        InfosAgent = Read.read( "FicheAgent.txt");
-        //affichage fiche agent + piece d'identité
-    }
 
     public static void ListeAgents()
     {
         ReadFileClass Read = new ReadFileClass();
         List<String> Agents = new ArrayList<String>();
-        Agents = Read.read("FicheAgent.txt");
-        //affichage liste des agents
+        Agents = Read.read("staff.txt");
+        JavaLA.AfficheHT();
     }
 }
