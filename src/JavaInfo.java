@@ -5,7 +5,8 @@ import java.util.Locale;
 public class JavaInfo {
     public static void AfficheHT(String infoangent[],String imgagent){
         String nomFichier = imgagent.replace(".txt", ".JPG");
-        String CheminImg = "C:\\Users\\guill\\IdeaProjects\\MSPR_Generateur_HTML\\fichiers_data\\";
+        System.out.println(nomFichier);
+        String CheminImg = "C:\\Users\\guill\\IdeaProjects\\MSPR_Generateur_HTML\\fichiers_data\\agent_img\\";
         var contante="""
                 <!doctype html>
                 <html lang="en">
@@ -31,12 +32,11 @@ public class JavaInfo {
                 </body>
                 </html>
                 """;
-        System.out.println("HTML_files\\" + infoangent[0].toLowerCase() + ".html");
+        //System.out.println("HTML_files\\" + infoangent[0].toLowerCase() + ".html");
         try(var pw = new PrintWriter("HTML_files\\" + infoangent[0].toLowerCase() + ".html")) {
             pw.write(contante);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-
     }
 }

@@ -23,10 +23,10 @@ public class main
         {
             String agent[];
             String BrutData = "";
-            System.out.println(fi.getName());
+            //System.out.println(fi.getName());
             BrutData = Read.readCharByChar("agent_data\\" + fi.getName());
             agent = BrutData.split("\\r?\\n");
-            System.out.println(agent);
+            //System.out.println(agent);
             JavaInfo.AfficheHT(agent, fi.getName());
         }
     }
