@@ -29,12 +29,12 @@ public class JavaInfo {
                 </body>
                 </html>
                 """;
-        try(var pw = new PrintWriter("D:\\cours\\EPSI\\3eme_annee\\MSPR\\MSPR_Generateur_HTML\\info.html")) {
+        /*try(var pw = new PrintWriter("D:\\cours\\EPSI\\3eme_annee\\MSPR\\MSPR_Generateur_HTML\\info.html")) {
 
             pw.write(contante);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-        }
+        }*/
 
     }
 }
