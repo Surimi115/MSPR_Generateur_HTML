@@ -31,6 +31,7 @@ public class JavaInfo {
                 </body>
                 </html>
                 """;
+        System.out.println("HTML_files\\" + infoangent[0].toLowerCase() + ".html");
         try(var pw = new PrintWriter("HTML_files\\" + infoangent[0].toLowerCase() + ".html")) {
             pw.write(contante);
         } catch (FileNotFoundException e) {

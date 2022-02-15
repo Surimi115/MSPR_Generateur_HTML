@@ -22,8 +22,11 @@ public class main
         for(File fi : files)
         {
             String agent[];
+            String BrutData = "";
             System.out.println(fi.getName());
-            agent = Read.readCharByChar("\\agent_data\\" + fi.getName());
+            BrutData = Read.readCharByChar("agent_data\\" + fi.getName());
+            agent = BrutData.split("\\r?\\n");
+            System.out.println(agent);
             JavaInfo.AfficheHT(agent, fi.getName());
         }
     }
@@ -32,7 +35,9 @@ public class main
     {
         ReadFileClass Read = new ReadFileClass();
         String[] Materiel;
-        Materiel = Read.readCharByChar("liste.txt");
+        String BrutData = "";
+        BrutData = Read.readCharByChar("liste.txt");
+        Materiel = BrutData.split("    ");
         JavaLM.AfficheHT(Materiel);
     }
 
@@ -41,7 +46,9 @@ public class main
     {
         ReadFileClass Read = new ReadFileClass();
         String Agents[];
-        Agents = Read.readCharByChar("staff.txt");
+        String BrutData = "";
+        BrutData = Read.readCharByChar("staff.txt");
+        Agents = BrutData.split("\\r?\\n");
         JavaLA.AfficheHT(Agents);
     }
 }
