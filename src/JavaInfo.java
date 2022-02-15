@@ -5,8 +5,7 @@ import java.util.Locale;
 public class JavaInfo {
     public static void AfficheHT(String infoangent[],String imgagent){
         String nomFichier = imgagent.replace(".txt", ".JPG");
-        System.out.println(nomFichier);
-        String CheminImg = "C:\\Users\\guill\\IdeaProjects\\MSPR_Generateur_HTML\\fichiers_data\\agent_img\\";
+        String CheminImg = "D:\\cours\\EPSI\\3eme_annee\\MSPR\\MSPR_Generateur_HTML\\fichiers_data\\agent_img\\";
         var contante="""
                 <!doctype html>
                 <html lang="en">
@@ -24,9 +23,18 @@ public class JavaInfo {
                               </li>
                               <li class="Lid-item">Poste:"""+infoangent[2]+ """
                             </li>
-                            </ol>
+                            """;
+        for(int i = 4; i < infoangent.length; i++)
+        {
+            contante += """
+                            <li class="Lid-item" >""" + infoangent[i] + """
+                            </li>""";
+
+        }
+        contante += """
+                       </ol>
                       <img class="fit-picture"
-                           src="\" """+ CheminImg + nomFichier + """ 
+                           src=" """+ CheminImg + nomFichier + """ 
                        ">
                 </div>
                 </body>
