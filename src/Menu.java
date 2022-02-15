@@ -23,7 +23,7 @@ public class Menu {
                 </body>
                 </html>
                 """;
-        try(var pw = new PrintWriter("menu.html")) {
+        try(var pw = new PrintWriter("HTML_files\\menu.html")) {
             pw.write(contante);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
