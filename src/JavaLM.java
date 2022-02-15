@@ -28,7 +28,7 @@ public class JavaLM {
                 </body>
                 </html>
                 """;
-        try(var pw = new PrintWriter("Lmat.html")) {
+        try(var pw = new PrintWriter("HTML_files\\Lmat.html")) {
             pw.write(contante);
         } catch (FileNotFoundException e) {
             e.printStackTrace();

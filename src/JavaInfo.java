@@ -4,6 +4,7 @@ import java.io.PrintWriter;
 public class JavaInfo {
     public static void AfficheHT(String infoangent[],String imgagent){
         String nomFichier = imgagent.replace(".txt", ".JPG");
+        String CheminImg = "C:\\Users\\guill\\IdeaProjects\\MSPR_Generateur_HTML\\fichiers_data\\";
         var contante="""
                 <!doctype html>
                 <html lang="en">
@@ -23,13 +24,13 @@ public class JavaInfo {
                             </li>
                             </ol>
                       <img class="fit-picture"
-                           src="\" """+nomFichier + """ 
+                           src="\" """+ CheminImg + nomFichier + """ 
                        ">
                 </div>
                 </body>
                 </html>
                 """;
-        try(var pw = new PrintWriter("info.html")) {
+        try(var pw = new PrintWriter("HTML_files\\info.html")) {
             pw.write(contante);
         } catch (FileNotFoundException e) {
             e.printStackTrace();

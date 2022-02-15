@@ -16,13 +16,14 @@ public class main
 
     public static void GenerateAgents()
     {
-        File f = new File("C:\\Users\\guill\\IdeaProjects\\MSPR_Generateur_HTML\\fichiers_data");
+        File f = new File("C:\\Users\\guill\\IdeaProjects\\MSPR_Generateur_HTML\\fichiers_data\\agent_data\\");
         ArrayList<File> files = new ArrayList<File>(Arrays.asList(f.listFiles()));
         ReadFileClass Read = new ReadFileClass();
         for(File fi : files)
         {
             String agent[];
-            agent = Read.readCharByChar(fi.getName());
+            System.out.println(fi.getName());
+            agent = Read.readCharByChar("\\agent_data\\" + fi.getName());
             JavaInfo.AfficheHT(agent, fi.getName());
         }
     }
