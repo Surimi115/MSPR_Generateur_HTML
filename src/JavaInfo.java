@@ -5,7 +5,7 @@ import java.util.Locale;
 public class JavaInfo {
     public static void AfficheHT(String infoangent[],String imgagent){
         String nomFichier = imgagent.replace(".txt", ".JPG");
-        String CheminImg = "D:\\cours\\EPSI\\3eme_annee\\MSPR\\MSPR_Generateur_HTML\\fichiers_data\\agent_img\\";
+        String CheminImg = "C:\\Users\\JD\\Jenkins\\workspace\\MSPR-E500\\fichiers_data\\agent_img\\";
         var contante="""
                 <!doctype html>
                 <html lang="en">

@@ -6,7 +6,7 @@ public class ReadFileClass
 {
     public static String readCharByChar(String fileName)
     {
-        String file = "D:\\cours\\EPSI\\3eme_annee\\MSPR\\MSPR_Generateur_HTML\\fichiers_data\\" + fileName;
+        String file = "C:\\Users\\JD\\Jenkins\\workspace\\MSPR-E500\\fichiers_data\\" + fileName;
         String ligne = "";
         try(
                 BufferedReader br = new BufferedReader(new FileReader(file)))
