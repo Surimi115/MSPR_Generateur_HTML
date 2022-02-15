@@ -19,8 +19,9 @@ public class JavaLA {
                 for(int i = 0; i < lisagent.length; i++)
                 {
                     contante += """
-                            <li class="Lid-item" > Nom:""" + lisagent[i] + """
-                            </li>""";
+                            <li class="Lid-item" > <a href=""" + lisagent[i].substring(1, lisagent[i].length()) + ".html" + """ 
+                            >""" + lisagent[i] + """
+                            </a> </li>""";
 
                 }
                contante += """

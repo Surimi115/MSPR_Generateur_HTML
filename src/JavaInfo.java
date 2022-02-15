@@ -1,5 +1,6 @@
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.util.Locale;
 
 public class JavaInfo {
     public static void AfficheHT(String infoangent[],String imgagent){
@@ -30,7 +31,7 @@ public class JavaInfo {
                 </body>
                 </html>
                 """;
-        try(var pw = new PrintWriter("HTML_files\\info.html")) {
+        try(var pw = new PrintWriter("HTML_files\\" + infoangent[0].toLowerCase() + ".html")) {
             pw.write(contante);
         } catch (FileNotFoundException e) {
             e.printStackTrace();

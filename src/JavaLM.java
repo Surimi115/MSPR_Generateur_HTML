@@ -19,7 +19,7 @@ public class JavaLM {
                for(int i = 0; i < lismato.length; i++)
                {
                    contante += """
-                           <li class="Lid-item" > Nom:""" + lismato[i] + """
+                           <li class="Lid-item" > """ + lismato[i] + """
                            </li>""";
 
                }
