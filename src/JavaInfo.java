@@ -2,7 +2,7 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 
 public class JavaInfo {
-    public static void AfficheHT(String infoangent[],String imgagent){
+    public static void AfficheHT(String[] infoangent, String imgagent){
         String nomFichier = imgagent.replace(".txt", ".JPG");
         var contante="""
                 <!doctype html>
@@ -23,13 +23,14 @@ public class JavaInfo {
                             </li>
                             </ol>
                       <img class="fit-picture"
-                           src="\" """+nomFichier + """ 
+                           src=" """+nomFichier + """ 
                        ">
                 </div>
                 </body>
                 </html>
                 """;
-        try(var pw = new PrintWriter("info.html")) {
+        try(var pw = new PrintWriter("D:\\cours\\EPSI\\3eme_annee\\MSPR\\MSPR_Generateur_HTML\\info.html")) {
+
             pw.write(contante);
         } catch (FileNotFoundException e) {
             e.printStackTrace();

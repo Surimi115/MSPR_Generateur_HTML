@@ -29,7 +29,7 @@ public class JavaLA {
                 </body>
                 </html>
                 """;
-        try(var pw = new PrintWriter("agent.html")) {
+        try(var pw = new PrintWriter("D:\\cours\\EPSI\\3eme_annee\\MSPR\\MSPR_Generateur_HTML\\agent.html")) {
             pw.write(contante);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
