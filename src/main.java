@@ -16,14 +16,18 @@ public class main
 
     public static void GenerateAgents()
     {
-        File f = new File("C:\\Users\\guill\\IdeaProjects\\MSPR_Generateur_HTML\\fichiers_data");
+        File f = new File("C:\\Users\\JD\\Jenkins\\workspace\\MSPR-E500\\fichiers_data\\agent_data\\");
         ArrayList<File> files = new ArrayList<File>(Arrays.asList(f.listFiles()));
         ReadFileClass Read = new ReadFileClass();
         for(File fi : files)
         {
             String agent[];
-            agent = Read.readCharByChar(fi.getName());
-            JavaInfo.AfficheHT();
+            String BrutData = "";
+            //System.out.println(fi.getName());
+            BrutData = Read.readCharByChar("agent_data\\" + fi.getName());
+            agent = BrutData.split("\\r?\\n");
+            //System.out.println(agent);
+            JavaInfo.AfficheHT(agent, fi.getName());
         }
     }
 
@@ -31,8 +35,10 @@ public class main
     {
         ReadFileClass Read = new ReadFileClass();
         String[] Materiel;
-        Materiel = Read.readCharByChar("liste.txt");
-        JavaLM.AfficheHT();
+        String BrutData = "";
+        BrutData = Read.readCharByChar("liste.txt");
+        Materiel = BrutData.split("    ");
+        JavaLM.AfficheHT(Materiel);
     }
 
 
@@ -40,7 +46,9 @@ public class main
     {
         ReadFileClass Read = new ReadFileClass();
         String Agents[];
-        Agents = Read.readCharByChar("staff.txt");
-        JavaLA.AfficheHT();
+        String BrutData = "";
+        BrutData = Read.readCharByChar("staff.txt");
+        Agents = BrutData.split("\\r?\\n");
+        JavaLA.AfficheHT(Agents);
     }
 }

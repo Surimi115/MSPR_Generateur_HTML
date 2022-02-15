@@ -4,33 +4,9 @@ import java.util.List;
 
 public class ReadFileClass
 {
-    public static List<String> read(String fileName)
+    public static String readCharByChar(String fileName)
     {
-        String file = "C:\\Users\\guill\\IdeaProjects\\MSPR_Generateur_HTML\\fichiers_data\\" + fileName;
-        List<String> data = new ArrayList<String>();
-        try(
-                BufferedReader br = new BufferedReader(new FileReader(file)))
-        {
-            String line;
-            while ((line = br.readLine()) != null)
-            {
-                //System.out.println(line);
-                data.add(line);
-            }
-        }
-        catch(
-                IOException e)
-        {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        }
-        return data;
-    }
-
-    public static String[] readCharByChar(String fileName)
-    {
-        String file = "C:\\Users\\guill\\IdeaProjects\\MSPR_Generateur_HTML\\fichiers_data\\" + fileName;
-        String[] data;
+        String file = "C:\\Users\\JD\\Jenkins\\workspace\\MSPR-E500\\fichiers_data\\" + fileName;
         String ligne = "";
         try(
                 BufferedReader br = new BufferedReader(new FileReader(file)))
@@ -47,7 +23,6 @@ public class ReadFileClass
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
-        data = ligne.split("    ");
-        return data;
+        return ligne;
     }
 }

@@ -1,9 +1,11 @@
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.util.Locale;
 
 public class JavaInfo {
-    public static void AfficheHT(){
-
+    public static void AfficheHT(String infoangent[],String imgagent){
+        String nomFichier = imgagent.replace(".txt", ".JPG");
+        String CheminImg = "C:\\Users\\JD\\Jenkins\\workspace\\MSPR-E500\\fichiers_data\\agent_img\\";
         var contante="""
                 <!doctype html>
                 <html lang="en">
@@ -15,21 +17,34 @@ public class JavaInfo {
                 <div class="container">
                       <h1>ID_agent</h1>
                       <ol class="Lid">
-                              <li class="Lid-item">Nom:</li>
-                              <li class="Lid-item">Prenom:</li>
-                              <li class="Lid-item">Poste:</li>
-                            </ol>
+                              <li class="Lid-item">Nom:"""+infoangent[0]+ """
+                              </li>
+                              <li class="Lid-item">Prenom:"""+infoangent[1]+ """
+                              </li>
+                              <li class="Lid-item">Poste:"""+infoangent[2]+ """
+                            </li>
+                            """;
+        for(int i = 4; i < infoangent.length; i++)
+        {
+            contante += """
+                            <li class="Lid-item" >""" + infoangent[i] + """
+                            </li>""";
+
+        }
+        contante += """
+                       </ol>
                       <img class="fit-picture"
-                           src="">
+                           src="https://github.com/Surimi115/MSPR_Generateur_HTML/blob/Develope/fichiers_data/agent_img/ """+ nomFichier + """ 
+                ?raw=true">
                 </div>
                 </body>
                 </html>
                 """;
-        try(var pw = new PrintWriter("info.html")) {
+        //System.out.println("HTML_files\\" + infoangent[0].toLowerCase() + ".html");
+        try(var pw = new PrintWriter("HTML_files\\" + infoangent[0].toLowerCase() + ".html")) {
             pw.write(contante);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-
     }
 }

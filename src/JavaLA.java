@@ -2,7 +2,7 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 
 public class JavaLA {
-    public static void AfficheHT(){
+    public static void AfficheHT(String lisagent[]){
 
         var contante="""
                 <!doctype html>
@@ -15,13 +15,22 @@ public class JavaLA {
                 <div class="container">
                       <h1>ID_agent</h1>
                       <ol class="Lid">
-                              <li class="Lid-item">Nom:</li>
-                            </ol>
+                      """;
+                for(int i = 0; i < lisagent.length; i++)
+                {
+                    contante += """
+                            <li class="Lid-item" > <a href=""" + lisagent[i].substring(1, lisagent[i].length()) + ".html" + """ 
+                            >""" + lisagent[i] + """
+                            </a> </li>""";
+
+                }
+               contante += """
+                    </ol >
                 </div>
                 </body>
                 </html>
                 """;
-        try(var pw = new PrintWriter("agent.html")) {
+        try(var pw = new PrintWriter("HTML_files\\agent.html")) {
             pw.write(contante);
         } catch (FileNotFoundException e) {
             e.printStackTrace();

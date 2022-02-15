@@ -3,7 +3,7 @@ import java.io.PrintWriter;
 
 public class JavaLM {
 
-    public static void AfficheHT(){
+    public static void AfficheHT(String lismato[]){
         var contante="""
                 <!doctype html>
                 <html lang="en">
@@ -15,12 +15,20 @@ public class JavaLM {
                 <div class="container">
                       <h1>List_Materiel</h1>
                       <ol class="Lmat">
-                      </ol>
+                      """;
+               for(int i = 0; i < lismato.length; i++)
+               {
+                   contante += """
+                           <li class="Lid-item" > """ + lismato[i] + """
+                           </li>""";
+
+               }
+              contante += """
                 </div>
                 </body>
                 </html>
                 """;
-        try(var pw = new PrintWriter("Lmat.html")) {
+        try(var pw = new PrintWriter("HTML_files\\Lmat.html")) {
             pw.write(contante);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
