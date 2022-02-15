@@ -34,8 +34,8 @@ public class JavaInfo {
         contante += """
                        </ol>
                       <img class="fit-picture"
-                           src=" """+ CheminImg + nomFichier + """ 
-                       ">
+                           src="https://github.com/Surimi115/MSPR_Generateur_HTML/blob/Develope/fichiers_data/agent_img/ """+ nomFichier + """ 
+                ?raw=true">
                 </div>
                 </body>
                 </html>
